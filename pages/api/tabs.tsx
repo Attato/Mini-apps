@@ -1,8 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 import Calculator from "./calculator"
+import Stopwatch from "./stopwatch"
 
-const Сalculator = (
+const calculator = (
 	<div className="body" key={Date.now()}>
             <Head>
 				<title>Сalculator</title>
@@ -18,7 +19,7 @@ const Сalculator = (
 	</div>
 );
 
-const Stopwatch = (
+const stopwatch = (
 	<div className="body" key={Date.now()}>
         <Head>
             <title>Stopwatch</title>
@@ -26,11 +27,11 @@ const Stopwatch = (
             <link rel="icon" href="/favicon.ico" />
         </Head>
 		<h1>Stopwatch</h1>
-
+		<Stopwatch/>
 	</div>
 );
 
-const Countdown = (
+const countdown = (
 	<div className="body" key={Date.now()}>
         <Head>
             <title>Countdown</title>
@@ -41,7 +42,7 @@ const Countdown = (
 	</div>
 );
 
-const PasswordGenerator = (
+const passwordGenerator = (
 	<div className="body" key={Date.now()}>
         <Head>
             <title>Password generator</title>
@@ -64,9 +65,9 @@ const QRcodeGenerator = (
 );
 
 export const tabs = [
-	{ title: 'Сalculator', wrap: [Сalculator] },
-	{ title: 'Stopwatch', wrap: [Stopwatch] },
-	{ title: 'Countdown', wrap: [Countdown] },
-	{ title: 'Password generator', wrap: [PasswordGenerator] },
+	{ title: 'Сalculator', wrap: [calculator] },
+	{ title: 'Stopwatch', wrap: [stopwatch] },
+	{ title: 'Countdown', wrap: [countdown] },
+	{ title: 'Password generator', wrap: [passwordGenerator] },
 	{ title: 'QR-code generator', wrap: [QRcodeGenerator] },
 ];

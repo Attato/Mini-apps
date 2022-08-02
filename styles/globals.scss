@@ -36,3 +36,27 @@ h1 {
 	font-weight: 400;
 	font-size: 42px;
 }
+
+button {
+	background-color: #17191c;
+	color: #767676;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 16px;
+
+	&:hover {
+		background-color: #1a1d20;
+		color: #8b8a8a;
+	}
+
+	&:active {
+		background-color: #1d2024; 
+		color: #ababab;
+	}
+
+	&:focus-visible {
+		outline: none;
+	}
+}
+	
