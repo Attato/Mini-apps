@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Calculator from "./calculator"
 
 const Сalculator = (
 	<div className="body" key={Date.now()}>
@@ -8,7 +9,12 @@ const Сalculator = (
 				<meta name="description" content="" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+
 		<h1>Calculator</h1>
+
+		<div className="calculator">
+			<Calculator />
+		</div>
 	</div>
 );
 
@@ -20,6 +26,7 @@ const Stopwatch = (
             <link rel="icon" href="/favicon.ico" />
         </Head>
 		<h1>Stopwatch</h1>
+
 	</div>
 );
 
