@@ -101,7 +101,7 @@
 
             #ms {
                 font-size: 22px;
-                width: 10px;
+                width: 2ch;
                 margin-left: 5px;
             }
         }
@@ -112,6 +112,36 @@
 
             button{
                 padding: 10px 20px;
+            }
+        }
+    }
+
+    .countdown {
+
+        h1{
+            text-align: center;
+        }
+
+        .time {
+            display: flex;
+            justify-content: center;    
+            gap: 20px;
+
+            .caption{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;       
+    
+                h1{
+                    width: 100%;
+                    margin: 0;
+                }
+    
+                p {
+                    color: #767676;
+                    margin: 0;
+                }
             }
         }
     }

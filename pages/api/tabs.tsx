@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Calculator from "./calculator"
 import Stopwatch from "./stopwatch"
+import Countdown from "./countdown"
 
 const calculator = (
 	<div className="body" key={Date.now()}>
@@ -38,7 +39,8 @@ const countdown = (
             <meta name="description" content="" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
-		<h1>Countdown</h1>
+		<h1>New Year Countdown</h1>
+		<Countdown/>
 	</div>
 );
 
