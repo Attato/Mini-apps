@@ -190,11 +190,36 @@
             }
         }
         
-
         .generate{
             display: flex;
             margin: auto;
             padding: 10px;
+        }
+    }
+
+    .qrcode__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+        .qrcode {           
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        input {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 20px;
+            background-color: transparent;
+            border: 0;
+            color: white;
+            font-size: 25px;
+            letter-spacing: 1px;
+            
+            &::placeholder {
+                text-align: center;
+            }
         }
     }
 }
