@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Calculator from "./calculator"
 import Stopwatch from "./stopwatch"
 import Countdown from "./countdown"
+import Password from "./password"
 
 const calculator = (
 	<div className="body" key={Date.now()}>
@@ -52,6 +53,7 @@ const passwordGenerator = (
             <link rel="icon" href="/favicon.ico" />
         </Head>
 		<h1>Password generator</h1>
+		<Password/>
 	</div>
 );
 

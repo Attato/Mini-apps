@@ -59,4 +59,13 @@ button {
 		outline: none;
 	}
 }
-	
+
+input {
+	&::placeholder {
+		color: white;
+	}
+
+	&:focus-visible {
+		outline: none;
+	}
+}
