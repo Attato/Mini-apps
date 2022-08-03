@@ -4,6 +4,7 @@ import Calculator from "./calculator"
 import Stopwatch from "./stopwatch"
 import Countdown from "./countdown"
 import Password from "./password"
+import QuickResponse from './qrcode';
 
 const calculator = (
 	<div className="body" key={Date.now()}>
@@ -65,6 +66,7 @@ const QRcodeGenerator = (
             <link rel="icon" href="/favicon.ico" />
         </Head>
 		<h1>QR-code generator</h1>
+		<QuickResponse/>
 	</div>
 );
 
