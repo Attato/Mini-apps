@@ -3,7 +3,7 @@ import QRCode from 'react-qr-code';
 
 const QuickResponse = () => {   
 
-    const [inputValue, setInputValue] = useState('');
+    const [inputValue, setInputValue] = useState('https://github.com/Attato');
 
     return (
         <div className="qrcode">
