@@ -88,7 +88,7 @@
     }
 
     .stopwatch {
-        width: 400px;
+        max-width: 400px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -115,7 +115,7 @@
     }
 
     .countdown {
-
+                
         h1{
             text-align: center;
         }
@@ -145,7 +145,7 @@
     }
 
     .password {
-        width: 400px;
+        max-width: 400px;
 
         .password__area {       
             display: flex;
