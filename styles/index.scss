@@ -44,22 +44,17 @@
 
 .body {
     display: flex;
-    min-height: calc(100vh - 150px - 130px);
+    min-height: calc(100vh - 90px - (60px + 30px) - (43px + 30px) - 100px);
     padding: 15px;
     height: 100%;
     max-width: 1300px;
     margin: auto;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
-
-    h1 {
-        margin-bottom: 30px;
-        user-select: none;
-    }
 
     .calculator {
-        width: 400px;
+        max-width: 400px;
+        width: 100%;
         
         input {
             width: 100%;
@@ -236,4 +231,11 @@
     .sub__column {
         gap: 20px !important;
     }
+}
+
+@media screen and (max-width: 496px) {
+    
+   .body {
+        min-height: calc(100vh - 90px - (89px + 30px) - (43px + 30px) - 100px);
+   }
 }
