@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     max-width: 1300px;
-    height: 60px;
+    min-height: 60px;
     margin: 0 auto 30px auto;
     padding: 20px 0;
     border-top: 1px solid #28292b;
@@ -15,8 +15,14 @@
     background-color: #1011139e;
     backdrop-filter: blur(10px);
 
+    .sub__column {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
     a {
-        margin-left: 25px;
         font-size: 13px;
         color: #b7bdc2;
         cursor: pointer;
@@ -222,5 +228,12 @@
                 text-align: center;
             }
         }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .sub__column {
+        gap: 20px !important;
     }
 }
