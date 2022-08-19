@@ -7,7 +7,7 @@ const QuickResponse = () => {
 
     return (
         <div className="qrcode__wrap">
-            <div className="qrcode"><QRCode value={inputValue}></QRCode></div>        
+            <div className="qrcode"><QRCode value={inputValue}></QRCode></div>
             <input type="text" placeholder="Enter text or link" onChange={e => setInputValue(e.target.value)} />
         </div>
     )
