@@ -8,6 +8,7 @@ const QuickResponse = () => {
     return (
         <div className="qrcode__wrap">
             <div className="qrcode"><QRCode value={inputValue}></QRCode></div>
+            <p>* This generator works with links, symbols and letters of the English alphabet.</p>  
             <input type="text" placeholder="Enter text or link" onChange={e => setInputValue(e.target.value)} />
         </div>
     )
