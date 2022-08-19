@@ -29,7 +29,7 @@ const Stopwatch = () => {
 			<div className="buttons">
 				<button onClick={() => setRunning(true)}>Start</button>
 				<button onClick={() => setRunning(false)}>Stop</button>
-				<button onClick={() => setTime(0)}>Reset</button>
+				<button onClick={() => {setRunning(false), setTime(0)}}>Reset</button>
 			</div>
 		</div>
 	);
