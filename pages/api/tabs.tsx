@@ -7,78 +7,73 @@ import Password from "./password"
 import QuickResponse from './qrcode';
 
 const calculator = (
-	<>
+	<React.Fragment key={Date.now()}>
 		<Head>
 			<title>Сalculator</title>
 			<meta name="description" content="" />
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 
-		<h1>Calculator</h1>
-		<div className="body" key={Date.now()}>
+		<div className="body">
 			<Calculator />
 		</div>
-	</>
+	</React.Fragment>
 );
 
 const stopwatch = (
-	<>
+	<React.Fragment key={Date.now()}>
 		<Head>
 			<title>Stopwatch</title>
 			<meta name="description" content="" />
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 
-		<h1>Stopwatch</h1>
-		<div className="body" key={Date.now()}>
+		<div className="body">
 			<Stopwatch/>
 		</div>
-	</>
+	</React.Fragment>
 );
 
 const countdown = (
-	<>
+	<React.Fragment key={Date.now()}>
 		<Head>
 			<title>Countdown</title>
 			<meta name="description" content="" />
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 
-		<h1>New Year Countdown</h1>
-		<div className="body" key={Date.now()}>
+		<div className="body">
 			<Countdown/>
 		</div>
-	</>
+	</React.Fragment>
 );
 
 const passwordGenerator = (
-	<>
+	<React.Fragment key={Date.now()}>
 		<Head>
 			<title>Password generator</title>
 			<meta name="description" content="" />
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 
-		<h1>Password generator</h1>
-		<div className="body" key={Date.now()}>
+		<div className="body">
 			<Password/>
 		</div>
-	</>
+	</React.Fragment>
 );
 
 const QRcodeGenerator = (
-	<>
+	<React.Fragment key={Date.now()}>
 		<Head>
 			<title>QR-code generator</title>
 			<meta name="description" content="" />
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 
-		<h1>QR-code generator</h1>
-		<div className="body" key={Date.now()}>
+		<div className="body">
 			<QuickResponse/>
 		</div>
-	</>
+	</React.Fragment>
 );
 
 export const tabs = [

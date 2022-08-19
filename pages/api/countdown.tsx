@@ -32,6 +32,7 @@ const Countdown = () => {
 
 	return (
         <div className="countdown">
+            <h1>until the new Year:</h1>
             <div className="time">
                 <div className="caption">                      
                     <h1>{days}</h1>

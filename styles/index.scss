@@ -1,241 +1,312 @@
 .sub {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    max-width: 1300px;
-    min-height: 60px;
-    margin: 0 auto 30px auto;
-    padding: 20px 0;
-    border-top: 1px solid #28292b;
-    user-select: none;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #1011139e;
-    backdrop-filter: blur(10px);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	max-width: 1300px;
+	min-height: 60px;
+	margin: 0 auto 30px auto;
+	padding: 20px 0;
+	border-top: 1px solid #28292b;
+	user-select: none;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background-color: #1011139e;
+	backdrop-filter: blur(10px);
 
-    .sub__column {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-    }
+	.sub__column {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 30px;
+	}
 
-    a {
-        font-size: 13px;
-        color: #b7bdc2;
-        cursor: pointer;
-        transition: all 0.4s;
+	a {
+		font-size: 13px;
+		color: #b7bdc2;
+		cursor: pointer;
+		transition: all 0.4s;
 
-        &:hover {
-            color: white;
-        }
-    }
-    
-    a:first-child {
-        margin-left: 0;
-    }
-    
-    .active__tab {
-        color: white !important;
-    }
+		&:hover {
+			color: white;
+		}
+	}
+
+	a:first-child {
+		margin-left: 0;
+	}
+
+	.active__tab {
+		color: white !important;
+	}
 }
 
 .body {
-    display: flex;
-    min-height: calc(100vh - 90px - (60px + 30px) - (43px + 30px) - 100px);
-    padding: 15px;
-    height: 100%;
-    max-width: 1300px;
-    margin: auto;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+	height: 100%;
+	min-height: calc(100vh - 150px - 130px);
+	max-width: 1300px;
+	margin: auto;
 
-    .calculator {
-        max-width: 400px;
-        width: 100%;
-        
-        input {
-            width: 100%;
-            height: 50px;
-            margin-bottom: 20px;
-            background-color: transparent;
-            border: 0;
-            color: white;
-            text-align: right;
-            font-size: 25px;
-            letter-spacing: 1px;
-        }
+	.calculator {
+		max-width: 400px;
+		width: 100%;
 
-        .keypad {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: minmax(60px, auto);
-            gap: 10px;
-            user-select: none;       
-            
-            #clear {
-                grid-column: 1/3;
-                grid-row: 1;
-            }
+		input {
+			width: 100%;
+			height: 50px;
+			margin-bottom: 20px;
+			background-color: transparent;
+			border: 0;
+			color: white;
+			text-align: right;
+			font-size: 25px;
+			letter-spacing: 1px;
+		}
 
-            #result {
-                grid-column: 3/5;
-                grid-row: 5;
-            }
-        }   
-    }
+		.keypad {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-auto-rows: minmax(60px, auto);
+			gap: 10px;
+			user-select: none;
 
-    .stopwatch {
-        max-width: 400px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+			#clear {
+				grid-column: 1/3;
+				grid-row: 1;
+			}
 
-        .time{
-            display: flex;
-            align-items: baseline;
+			#result {
+				grid-column: 3/5;
+				grid-row: 5;
+			}
+		}
+	}
 
-            #ms {
-                font-size: 22px;
-                width: 2ch;
-                margin-left: 5px;
-            }
-        }
+	.stopwatch {
+		max-width: 400px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 
-        .buttons{
-            display: flex;
-            gap: 15px;
+		.time {
+			display: flex;
+			align-items: baseline;
 
-            button{
-                padding: 10px 20px;
-            }
-        }
-    }
+			#ms {
+				font-size: 22px;
+				width: 2ch;
+				margin-left: 5px;
+			}
+		}
 
-    .countdown {
-                
-        h1{
-            text-align: center;
-        }
+		.buttons {
+			display: flex;
+			gap: 15px;
 
-        .time {
-            display: flex;
-            justify-content: center;    
-            gap: 20px;
+			button {
+				padding: 10px 20px;
+			}
+		}
+	}
 
-            .caption{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;       
-    
-                h1{
-                    width: 100%;
-                    margin: 0;
-                }
-    
-                p {
-                    color: #767676;
-                    margin: 0;
-                }
-            }
-        }
-    }
+	.countdown {
+		h1 {
+			text-align: center;
+		}
 
-    .password {
-        max-width: 400px;
+		.time {
+			display: flex;
+			justify-content: center;
+			gap: 20px;
 
-        .password__area {       
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
+			.caption {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
 
-            input {
-                max-width: 350px;
-                width: 100%;
-                height: 50px;
-                margin-bottom: 20px;
-                background-color: transparent;
-                border: 0;
-                color: white;
-                font-size: 25px;
-                letter-spacing: 1px;
-            }
+				h1 {
+					width: 100%;
+					margin: 0;
+				}
 
-            .copy{
-                width: 40px;
-                border-radius: 50%;
-                height: 40px;
-                transition: 10s;
-                padding: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-        }
+				p {
+					color: #767676;
+					margin: 0;
+				}
+			}
+		}
+	}
 
-        span {
-            color: #767676;
-        }
+	.password {
+		max-width: 400px;
+		width: 100%;
 
-        .settings{
-            .flex__row {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 10px;
-                
-                &:last-child{
-                    margin-bottom: 30px;
-                }
-            }
-        }
-        
-        .generate{
-            display: flex;
-            margin: auto;
-            padding: 10px;
-        }
-    }
+		.password__area {
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
 
-    .qrcode__wrap {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        
-        .qrcode {           
-            padding: 20px;
-            background-color: #fff;
-        }
+			input {
+				max-width: 360px;
+				width: 100%;
+				height: 50px;
+				margin-bottom: 20px;
+				background-color: transparent;
+				border: 0;
+				color: white;
+				font-size: 25px;
+				letter-spacing: 1px;
+			}
 
-        input {
-            width: 100%;
-            height: 50px;
-            margin-bottom: 20px;
-            background-color: transparent;
-            border: 0;
-            color: white;
-            font-size: 25px;
-            letter-spacing: 1px;
-            
-            &::placeholder {
-                text-align: center;
-            }
-        }
-    }
+			.copy {
+				width: 40px;
+				border-radius: 50%;
+				height: 40px;
+				transition: 10s;
+				padding: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+
+		span {
+			color: #767676;
+		}
+
+		.settings {
+			.flex__row {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 10px;
+
+				&:last-child {
+					margin-bottom: 30px;
+				}
+
+				#input {
+					position: relative;
+					background: #1a1a1a;
+					transition: 0.2s;
+					overflow: hidden;
+					border-radius: 0.75em;
+					width: 3em;
+					height: 1.5em;
+					-webkit-appearance: none;
+					appearance: none;
+					-webkit-tap-highlight-color: transparent;
+					cursor: pointer;
+
+					&:checked {
+						background: #0075ff;
+						transform: scaleX(1);
+					}
+
+					&:focus {
+						outline: transparent;
+					}
+
+					&:before,
+					&:after {
+						background: hsl(0, 0%, 90%);
+						transition: transform var(--dur);
+						position: absolute;
+						border-radius: 50%;
+						content: '';
+						display: block;
+						top: 0.25em;
+						left: 0.25em;
+						width: 1em;
+						height: 1em;
+					}
+
+					&:before {
+						transform: translateX(-1.5em);
+						transition-timing-function: ease-out;
+						transition-delay: 0s;
+					}
+
+					&:checked:before {
+						transform: translateX(1.5em);
+						transition-delay: calc(var(--dur) * 0.75);
+						transition-timing-function: cubic-bezier(0.3, 1.6, 0.5, 0.7);
+					}
+
+					&:after {
+						transition-delay: calc(var(--dur) * 0.75);
+						transition-timing-function: cubic-bezier(0.3, 1.6, 0.5, 0.7);
+					}
+
+					&:checked:after {
+						transform: translateX(3em);
+						transition-timing-function: ease-out;
+						transition-delay: 0s;
+					}
+				}
+
+				.sr {
+					top: 0;
+					left: 0;
+					position: absolute;
+					overflow: hidden;
+					clip: rect(1px, 1px, 1px, 1px);
+					color: transparent;
+					width: 1px;
+					height: 1px;
+				}
+			}
+		}
+
+		.generate {
+			display: flex;
+			margin: auto;
+			padding: 10px;
+		}
+	}
+
+	.qrcode__wrap {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		.qrcode {
+			padding: 20px;
+			background-color: #fff;
+		}
+
+		input {
+			width: 100%;
+			height: 50px;
+			margin-bottom: 20px;
+			background-color: transparent;
+			border: 0;
+			color: white;
+			font-size: 25px;
+			letter-spacing: 1px;
+
+			&::placeholder {
+				text-align: center;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 768px) {
-    
-    .sub__column {
-        gap: 20px !important;
-    }
+	.sub__column {
+		gap: 20px !important;
+	}
 }
 
 @media screen and (max-width: 496px) {
-    
-   .body {
-        min-height: calc(100vh - 90px - (89px + 30px) - (43px + 30px) - 100px);
-   }
+	.body {
+		min-height: calc(100vh - 90px - (89px + 30px) - (43px + 30px) - 100px);
+	}
 }

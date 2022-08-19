@@ -5,20 +5,22 @@ const Checkbox = (props) => {
 	const { value, onChange } = props;
 
 	return (
-		<div>
-			<input type="checkbox" checked={value} onChange={onChange} />
+		<div className="toggle">
+			<input id="input" checked={value} onChange={onChange} type="checkbox" name="Dark mode" role="switch" value="on"></input>
+			<label htmlFor="input" className="sr">Dark Mode</label>
 		</div>
 	);
 };
 
 const Password = () => {
 	const [password, setPassword] = useState({
-		length: 5,
+		length: 10,
 		uppercase: false,
-		lowercase: false,
-		numbers: false,
-		symbols: false,
+		lowercase: true,
+		numbers: true,
+		symbols: true,
 	});
+
 	const [handelText, setHandelText] = useState('');
 	const [copied, setCopied] = useState(false);
 
@@ -101,7 +103,7 @@ const Password = () => {
 					value={handelText}
 					placeholder="Empty"
 					autoComplete="off"
-                    readOnly
+					readOnly
 					onChange={(e) => setHandelText(e.target.value)}
 				/>
 				<button
@@ -123,42 +125,48 @@ const Password = () => {
 					)}
 				</button>
 			</div>
-            
-            <div className="settings">
 
-                <div className="flex__row">
-                    <span>Password length</span>
-                    <input
-                        type="number"
-                        min="4"
-                        max="20"
-                        value={password.length}
-                        onChange={(e) => setPasswordLength(e.target.value)}
-                    />
-                </div>
+			<div className="settings">
+				<div className="flex__row">
+					<span>Include uppercase letters</span>
+					<Checkbox
+						value={password.uppercase}
+						onChange={handleChangeUppercase}
+					/>
+				</div>
 
-                <div className="flex__row">
-                    <span>Include uppercase letters</span>
-                    <Checkbox value={password.uppercase} onChange={handleChangeUppercase} />
-                </div>
+				<div className="flex__row">
+					<span>Include lowercase letters</span>
+					<Checkbox
+						value={password.lowercase}
+						onChange={handleChangeLowercase}
+					/>
+				</div>
 
-                <div className="flex__row">
-                    <span>Include lowercase letters</span>
-                    <Checkbox value={password.lowercase} onChange={handleChangeLowercase} />
-                </div>
+				<div className="flex__row">
+					<span>Include numbers</span>
+					<Checkbox value={password.numbers} onChange={handleChangeNumbers} />
+				</div>
 
-                <div className="flex__row">
-                    <span>Include numbers</span>
-                    <Checkbox value={password.numbers} onChange={handleChangeNumbers} />
-                </div>
+				<div className="flex__row">
+					<span>Include symbols</span>
+					<Checkbox value={password.symbols} onChange={handleChangeSymbols} />
+				</div>
+				<div className="flex__row">
+					<span>Password length: {password.length}</span>
+					<input
+						type="range"
+						min="4"
+						max="20"
+						value={password.length}
+						onChange={(e) => setPasswordLength(e.target.value)}
+					/>
+				</div>
+			</div>
 
-                <div className="flex__row">
-                    <span>Include symbols</span>
-                    <Checkbox value={password.symbols} onChange={handleChangeSymbols} />
-                </div>
-            </div>
-
-			<button className="generate" onClick={generatePassword}>Generate password</button>
+			<button className="generate" onClick={generatePassword}>
+				Generate password
+			</button>
 		</div>
 	);
 };
