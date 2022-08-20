@@ -362,6 +362,22 @@
 
 @media screen and (max-width: 496px) {
 	.body {
-		min-height: calc(100vh - 90px - (89px + 30px) - (43px + 30px) - 100px);
+		min-height: calc(100vh - 90px - (89px + 30px) - 100px);
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.password__area {
+		input {
+			max-width: 300px !important;
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.password__area {
+		input {
+			max-width: 240px !important;
+		}
 	}
 }
