@@ -6,8 +6,18 @@ const Checkbox = (props) => {
 
 	return (
 		<div className="toggle">
-			<input id="input" checked={value} onChange={onChange} type="checkbox" name="Dark mode" role="switch" value="on"></input>
-			<label htmlFor="input" className="sr">Dark Mode</label>
+			<input
+				id="input"
+				checked={value}
+				onChange={onChange}
+				type="checkbox"
+				name="Dark mode"
+				role="switch"
+				value="on"
+			></input>
+			<label htmlFor="input" className="sr">
+				Dark Mode
+			</label>
 		</div>
 	);
 };
@@ -21,9 +31,9 @@ const Password = () => {
 		symbols: true,
 	});
 
-	const [handelText, setHandelText] = useState('');
-	const [copied, setCopied] = useState(false);
+	const [handleText, setHandleText] = useState('');
 
+	const [buttonName, setButtonName] = useState('copy');
 	const handleChangeUppercase = () => {
 		setPassword({
 			...password,
@@ -88,7 +98,7 @@ const Password = () => {
 			];
 			const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
 			const characters = shuffleArray(availableCharacters).slice(0, length);
-			setHandelText(characters.join(''));
+			setHandleText(characters.join(''));
 			return characters;
 		};
 
@@ -100,29 +110,46 @@ const Password = () => {
 			<div className="password__area">
 				<input
 					type="text"
-					value={handelText}
-					placeholder="Empty"
+					value={handleText}
+					placeholder={
+						!password.lowercase &&
+						!password.uppercase &&
+						!password.numbers &&
+						!password.symbols
+							? 'Nothing selected'
+							: 'Empty'
+					}
 					autoComplete="off"
 					readOnly
-					onChange={(e) => setHandelText(e.target.value)}
+					onChange={(e) => setHandleText(e.target.value)}
 				/>
 				<button
-					className="copy"
+					className={buttonName}
 					onClick={() => {
-						if (handelText.length > 0) {
-							navigator.clipboard.writeText(handelText);
-							setCopied(true);
-							setInterval(() => {
-								setCopied(false);
-							}, 2000);
+						if (handleText.length > 0) {
+							navigator.clipboard.writeText(handleText);
+						}
+
+						if (handleText === '') {
+							setButtonName('copy error');
+							setTimeout(() => {
+								setButtonName('copy');
+							}, 3000);
+							return () => {
+								clearTimeout();
+							};
+						} else {
+							setButtonName('copy complete');
+							setTimeout(() => {
+								setButtonName('copy');
+							}, 3000);
+							return () => {
+								clearTimeout();
+							};
 						}
 					}}
 				>
-					{copied ? (
-						<Image src="/checkmark.svg" alt="" width={15} height={15} />
-					) : (
-						<Image src="/copy.svg" alt="" width={15} height={15} />
-					)}
+					<Image src="/copy.svg" alt="" width={15} height={15} />
 				</button>
 			</div>
 
@@ -152,6 +179,7 @@ const Password = () => {
 					<span>Include symbols</span>
 					<Checkbox value={password.symbols} onChange={handleChangeSymbols} />
 				</div>
+
 				<div className="flex__row">
 					<span>Password length: {password.length}</span>
 					<input
