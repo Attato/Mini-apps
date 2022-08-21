@@ -195,6 +195,10 @@
 				}
 			}
 
+			.error, .complete {
+				-webkit-tap-highlight-color: transparent;
+			}
+
 			.error:before {
 				content: "Error! Nothing to copy.";
 				width: 170px;
@@ -227,7 +231,7 @@
 				width: 10px;
 				height: 10px;
 				background-color: #17191c;
-				transform: rotate(45deg)
+				transform: rotate(45deg);
 			}
 		}
 
