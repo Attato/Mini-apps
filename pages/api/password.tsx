@@ -123,7 +123,7 @@ const Password = () => {
 					readOnly
 					onChange={(e) => setHandleText(e.target.value)}
 				/>
-				<button
+				<div
 					className={buttonName}
 					onClick={() => {
 						if (handleText.length > 0) {
@@ -150,7 +150,7 @@ const Password = () => {
 					}}
 				>
 					<Image src="/copy.svg" alt="" width={15} height={15} />
-				</button>
+				</div>
 			</div>
 
 			<div className="settings">
