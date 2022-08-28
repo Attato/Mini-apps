@@ -20,30 +20,17 @@ const calculator = (
 	</React.Fragment>
 );
 
-const stopwatch = (
+const timeСounters = (
 	<React.Fragment key={Date.now()}>
 		<Head>
-			<title>Stopwatch</title>
-			<meta name="description" content="" />
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
-
-		<div className="body">
-			<Stopwatch/>
-		</div>
-	</React.Fragment>
-);
-
-const countdown = (
-	<React.Fragment key={Date.now()}>
-		<Head>
-			<title>Countdown</title>
+			<title>Time counters</title>
 			<meta name="description" content="" />
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 
 		<div className="body">
 			<Countdown/>
+			<Stopwatch/>
 		</div>
 	</React.Fragment>
 );
@@ -78,8 +65,7 @@ const QRcodeGenerator = (
 
 export const tabs = [
 	{ title: 'Сalculator', wrap: [calculator] },
-	{ title: 'Stopwatch', wrap: [stopwatch] },
-	{ title: 'Countdown', wrap: [countdown] },
+	{ title: 'Time Counters', wrap: [timeСounters] },
 	{ title: 'Password generator', wrap: [passwordGenerator] },
 	{ title: 'QR-code generator', wrap: [QRcodeGenerator] },
 ];

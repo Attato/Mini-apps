@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import "styles/variables.scss";
 
 * {
 	box-sizing: border-box;
@@ -22,8 +23,27 @@ a {
 	text-decoration: none;
 }
 
+button {
+	background-color: $bg;
+	color: $text;
+	border: none;
+	border-radius: 6px;
+	user-select: none;
+	cursor: pointer;
+}
+
 button, input {
 	font-family: 'Josefin Sans', sans-serif;
+
+	&:focus-visible {
+		outline: none;
+	}
+}
+
+input{
+	&::placeholder {
+		color: white;
+	}
 }
 
 h1,
@@ -38,48 +58,18 @@ h6 {
 h1 {
 	color: white;
 	font-weight: 400;
-	font-size: 42px;
-	margin-bottom: 30px;
+	font-size: 30px;
+}
+
+h3 {
+	color: white;
+	font-size: 18px;
+	font-weight: 500;
+	padding-bottom: 10px;
+	border-bottom: 3px solid #28292b;
 	user-select: none;
-	text-align: center;
 }
 
-button {
-	background-color: #17191c;
-	color: #767676;
-	border: none;
-	border-radius: 6px;
-	cursor: pointer;
-	font-size: 16px;
-
-	&:hover {
-		background-color: #1a1d20;
-		color: #8b8a8a;
-	}
-
-	&:active {
-		background-color: #1d2024; 
-		color: #ababab;
-	}
-
-	&:focus-visible {
-		outline: none;
-	}
+#tr-popup {
+	display: none !important;
 }
-
-input {
-	&::placeholder {
-		color: white;
-	}
-
-	&:focus-visible {
-		outline: none;
-	}
-}
-
-@media screen and (max-width: 425px) {
-    
-	h1 {
-		font-size: 30px;
-	}
- }

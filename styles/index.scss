@@ -1,3 +1,5 @@
+@import 'styles/variables.scss';
+
 .sub {
 	display: flex;
 	flex-direction: row;
@@ -5,14 +7,14 @@
 	align-items: center;
 	max-width: 1300px;
 	min-height: 60px;
-	margin: 0 auto 30px auto;
+	margin: 0 auto;
 	padding: 20px 0;
 	border-top: 1px solid #28292b;
 	user-select: none;
 	position: sticky;
 	top: 0;
 	z-index: 1000;
-	background-color: #1011139e;
+	background-color: $main;
 	backdrop-filter: blur(10px);
 
 	.sub__column {
@@ -24,7 +26,7 @@
 
 	a {
 		font-size: 13px;
-		color: #b7bdc2;
+		color: $text;
 		cursor: pointer;
 		transition: all 0.4s;
 
@@ -49,7 +51,6 @@
 	align-items: center;
 	padding: 15px;
 	height: 100%;
-	min-height: calc(100vh - 150px - 130px);
 	max-width: 1300px;
 	margin: auto;
 
@@ -74,26 +75,91 @@
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			grid-auto-rows: minmax(60px, auto);
-			gap: 10px;
+			gap: 8px;
 			user-select: none;
 
-			#clear {
-				grid-column: 1/3;
-				grid-row: 1;
+			button {
+				color: $text;
 			}
 
-			#result {
+			#operation {
+				background-color: #28292b;
+				color: white;
+				font-size: 21px;
+			}
+
+			.clear {
+				grid-column: 1/3;
+				grid-row: 1;
+				background-color: $blue;
+				color: white;
+			}
+
+			.result {
 				grid-column: 3/5;
 				grid-row: 5;
+				background-color: $blue;
+				color: white;
+			}
+		}
+	}
+
+	.countdown {
+		margin-bottom: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		background-color: transparent;
+		padding: 20px;
+		max-width: 300px;
+		width: 100%;
+
+		h3 {
+			border-color: $border;
+		}
+
+		.time {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 20px;
+
+			.caption {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				h1 {
+					width: 100%;
+					margin: 0;
+					font-size: 28px;
+				}
+
+				p {
+					color: $text;
+					margin: 0;
+					user-select: none;
+				}
 			}
 		}
 	}
 
 	.stopwatch {
-		max-width: 400px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		gap: 20px;
+		background: #17191c;
+		padding: 20px;
+		border-radius: 6px;
+		max-width: 300px;
+		width: 100%;
+
+		h3 {
+			border-color: $border;
+		}
 
 		.time {
 			display: flex;
@@ -108,49 +174,29 @@
 
 		.buttons {
 			display: flex;
+			flex-wrap: wrap;
 			gap: 15px;
 
 			button {
 				padding: 10px 20px;
-				user-select: none;
-			}
-		}
-	}
+				background-color: $border;
+				color: $text;
 
-	.countdown {
-
-		h1 {
-			text-align: center;
-		}
-
-		.time {
-			display: flex;
-			justify-content: center;
-			gap: 20px;
-
-			.caption {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-
-				h1 {
-					width: 100%;
-					margin: 0;
+				&:hover {
+					background-color: #2b2c2e;
 				}
 
-				p {
-					color: #767676;
-					margin: 0;
-					user-select: none;
+				&:active {
+					background-color: #303134;
 				}
 			}
 		}
 	}
-	
+
 	.password {
 		max-width: 400px;
 		width: 100%;
+		margin-top: 60px;
 
 		.password__area {
 			display: flex;
@@ -185,49 +231,48 @@
 				&:hover {
 					background-color: #1a1d20;
 				}
-			
+
 				&:active {
-					background-color: #1d2024; 
-				}
-			
-				&:focus-visible {
-					outline: none;
+					background-color: #1d2024;
 				}
 			}
 
-			.error, .complete {
+			.error,
+			.complete {
 				-webkit-tap-highlight-color: transparent;
 			}
 
 			.error:before {
-				content: "Error! Nothing to copy.";
+				content: 'Error! Nothing to copy.';
 				width: 170px;
 				position: absolute;
-				top: -50px;
-				right: -10px;
+				top: -45px;
+				right: -12px;
 				background-color: #17191c;
 				padding: 8px 10px;
 				border-radius: 20px;
 				color: #bd2626;
+				font-size: 14px;
 			}
 
-			
 			.complete:before {
-				content: "Copied!";
+				content: 'Copied!';
 				position: absolute;
-				top: -50px;
-				right: -15px;
+				top: -45px;
+				right: -12px;
 				background-color: #17191c;
 				padding: 8px 10px;
 				border-radius: 20px;
 				color: #25a53d;
+				font-size: 14px;
 			}
 
-			.complete:after, .error:after {
-				content: "";
+			.complete:after,
+			.error:after {
+				content: '';
 				position: absolute;
-				top: -23px;
-				right: 15px;
+				top: -20px;
+				right: 16px;
 				width: 10px;
 				height: 10px;
 				background-color: #17191c;
@@ -236,7 +281,7 @@
 		}
 
 		span {
-			color: #767676;
+			color: $text;
 		}
 
 		.settings {
@@ -264,7 +309,7 @@
 					cursor: pointer;
 
 					&:checked {
-						background: #0075ff;
+						background: $blue;
 						transform: scaleX(1);
 					}
 
@@ -328,6 +373,14 @@
 			margin: auto;
 			padding: 10px;
 			user-select: none;
+
+			&:hover {
+				background-color: #1a1d20;
+			}
+
+			&:active {
+				background-color: #1d2024;
+			}
 		}
 	}
 
@@ -341,12 +394,12 @@
 			background-color: #fff;
 		}
 
-        p {
-            color: #767676;
-            max-width: 296px;
-            line-height: 24px;
-            text-align: center;
-        }
+		p {
+			color: $text;
+			max-width: 296px;
+			line-height: 24px;
+			text-align: center;
+		}
 
 		input {
 			width: 100%;
@@ -369,12 +422,6 @@
 @media screen and (max-width: 768px) {
 	.sub__column {
 		gap: 20px !important;
-	}
-}
-
-@media screen and (max-width: 496px) {
-	.body {
-		min-height: calc(100vh - 90px - (89px + 30px) - 100px);
 	}
 }
 
