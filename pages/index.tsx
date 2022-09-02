@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+
 import Header from 'components/header/header';
 import Footer from 'components/footer/footer';
+
 import { tabs } from './api/tabs';
 import { motion } from 'framer-motion';
 

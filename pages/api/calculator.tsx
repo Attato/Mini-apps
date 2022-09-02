@@ -28,7 +28,7 @@ const Calculator = () => {
         <div className="calculator">
             <input type="text" value={result} readOnly placeholder="0"/>
             <div className="keypad">
-                <button onClick={clear} className="clear">Clear</button>
+                <button onClick={clear} id="operation" className="clear">Clear</button>
                 <button onClick={backspace} id="operation" className="backspace">←</button>
                 <button onClick={handleClick} id="operation" name="/">÷</button>
                 <button onClick={handleClick} name="7">7</button>
@@ -45,7 +45,7 @@ const Calculator = () => {
                 <button onClick={handleClick} id="operation" name="+">+</button>
                 <button onClick={handleClick} name="0">0</button>
                 <button onClick={handleClick} name=".">.</button>
-                <button onClick={calculate} className="result">=</button>
+                <button onClick={calculate} id="operation" className="result">=</button>
             </div>
         </div>
     )
